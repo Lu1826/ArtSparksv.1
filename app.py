@@ -24,12 +24,12 @@ pieles = [
 ]
 
 cabellos = [
-"cabello lacio corto",
-"cabello lacio largo",
-"cabello ondulado corto",
-"cabello ondulado largo",
-"cabello rizado corto",
-"cabello rizado largo"
+"lacio corto",
+"lacio largo",
+"ondulado corto",
+"ondulado largo",
+"rizado corto",
+"rizado largo"
 ]
 
 ropa = [

@@ -42,5 +42,5 @@ if st.button("Generar Idea"):
     lugar = random.choice(lugares)
     rareza = random.choice(rarezas)
 
-st.success(f"Dibuja un {personaje} {emocion} en {lugar}")
-st.markdown(f"### {rareza}")
+    st.success(f'Dibuja un {personaje} {emocion} en {lugar}')
+    st.markdown(f'### {rareza}')

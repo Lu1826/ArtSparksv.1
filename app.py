@@ -187,22 +187,15 @@ Pasatiempo: {random.choice(pasatiempos)}
 # PERSONAJE
 
 with col2:
-if st.button("🧙 Personaje"):
-
-```
-    st.success(f"""
-```
-
-Tipo: {random.choice(tipos)}
-
-Personalidad: {random.choice(personalidades)}
-
-Poder: {random.choice(poderes)}
-
-Accesorio: {random.choice(accesorios)}
-
-Objetivo: {random.choice(objetivos)}
-""")
+    if st.button("🧙 Personaje"):
+        texto_resultado = (
+            f"Tipo: {random.choice(tipos)}\n"
+            f"Personalidad: {random.choice(personalidades)}\n"
+            f"Poder: {random.choice(poderes)}\n"
+            f"Accesorio: {random.choice(accesorios)}\n"
+            f"Objetivo: {random.choice(objetivos)}\n"
+        )
+        st.success(texto_resultado)
 
 # TREND
 

@@ -14,10 +14,11 @@ st.subheader("Generador creativo de ideas para artistas")
 
 edades = ["Niño", "Adolescente", "Joven", "Adulto", "Anciano"]
 
-sexos = ["Hombre", "Mujer"]
+sexos = ["Hombre", "Mujer","Indefinido"]
 
 pieles = [
 "piel clara",
+"piel trigueña",
 "piel morena",
 "piel oscura"
 ]
@@ -61,6 +62,7 @@ tipos = [
 "Hada",
 "Ninja",
 "Cyborg"
+"Zombi"
 ]
 
 personalidades = [
@@ -113,6 +115,12 @@ frutas = [
 "Cereza",
 "Limón",
 "Manzana"
+"Arandano"
+"Fresa"
+"Maracuya"
+"Naranja"
+"Frambuesa"
+"Piña"
 ]
 
 animales = [

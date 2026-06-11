@@ -218,5 +218,4 @@ Acción: {random.choice(acciones)}
 
 Estilo: {random.choice(estilos)}
 
-Objeto: {random.choice(objetos)}
-""")
+Objeto: {random.choice(objetos)}""")

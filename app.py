@@ -5,7 +5,35 @@ st.title("🎨 ArtSpark")
 st.subheader("Generador creativo de ideas para artistas")
 
 # =====================
+def calcular_rareza(elementos):
 
+    palabras_raras = [
+        "Dragón",
+        "Cyborg",
+        "Vampiro",
+        "Hada",
+        "Ninja",
+        "Cyberpunk",
+        "Amarillo neón",
+        "Reloj de arena",
+        "Viajar en el tiempo",
+        "Telepatía"
+    ]
+
+    puntos = 0
+
+    for elemento in elementos:
+        if elemento in palabras_raras:
+            puntos += 1
+
+    if puntos >= 3:
+        return "🏆 Legendaria"
+    elif puntos == 2:
+        return "✨ Épica"
+    elif puntos == 1:
+        return "🔮 Rara"
+    else:
+        return "🟢 Común"
 # LISTAS
 
 # =====================
@@ -201,6 +229,20 @@ acciones_existente = [
     "explorando"
 ]
 
+# NIVELES DE RAREZA
+
+palabras_raras = [
+    "Dragón",
+    "Cyborg",
+    "Vampiro",
+    "Hada",
+    "Ninja",
+    "Cyberpunk",
+    "Amarillo neón",
+    "Reloj de arena",
+    "Viajar en el tiempo",
+    "Telepatía"
+]
 # =====================
 
 # BOTONES
@@ -227,27 +269,58 @@ with col1:
 
 with col2:
     if st.button("🧙 Personaje"):
+
+        tipo = random.choice(tipos)
+        personalidad = random.choice(personalidades)
+        poder = random.choice(poderes)
+        accesorio = random.choice(accesorios)
+        objetivo = random.choice(objetivos)
+
+        rareza = calcular_rareza([
+            tipo,
+            poder,
+            objetivo
+        ])
+
         texto_resultado = (
-            f"Tipo: {random.choice(tipos)}\n"
-            f"Personalidad: {random.choice(personalidades)}\n"
-            f"Poder: {random.choice(poderes)}\n"
-            f"Accesorio: {random.choice(accesorios)}\n"
-            f"Objetivo: {random.choice(objetivos)}\n"
+            f"Tipo: {tipo}\n"
+            f"Personalidad: {personalidad}\n"
+            f"Poder: {poder}\n"
+            f"Accesorio: {accesorio}\n"
+            f"Objetivo: {objetivo}\n\n"
+            f"Rareza: {rareza}"
         )
+
         st.success(texto_resultado)
 
 # TREND
 
 with col3:
-    if st.button("📈 Trend Challenge"):
+    if st.button("🌈 Trend Challenge"):
+
+        color = random.choice(colores)
+        fruta = random.choice(frutas)
+        animal = random.choice(animales)
+        accion = random.choice(acciones)
+        estilo = random.choice(estilos)
+        objeto = random.choice(objetos)
+
+        rareza = calcular_rareza([
+            color,
+            estilo,
+            objeto
+        ])
+
         texto_resultado = (
-            f"Color: {random.choice(colores)}\n"
-            f"Fruta: {random.choice(frutas)}\n"
-            f"Animal: {random.choice(animales)}\n"
-            f"Acción: {random.choice(acciones)}\n"
-            f"Estilo: {random.choice(estilos)}\n"
-            f"Objeto: {random.choice(objetos)}"
+            f"Color: {color}\n"
+            f"Fruta: {fruta}\n"
+            f"Animal: {animal}\n"
+            f"Acción: {accion}\n"
+            f"Estilo: {estilo}\n"
+            f"Objeto: {objeto}\n\n"
+            f"Rareza: {rareza}"
         )
+
         st.success(texto_resultado)
 
 # PERSONAJE EXISTENTE

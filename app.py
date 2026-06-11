@@ -4,43 +4,217 @@ import random
 st.title("🎨 ArtSpark")
 st.subheader("Generador creativo de ideas para artistas")
 
-personajes = [
-    "astronauta",
-    "pirata",
-    "chef",
-    "detective",
-    "mago"
+# =====================
+
+# LISTAS
+
+# =====================
+
+# PERSONA
+
+edades = ["Niño", "Adolescente", "Joven", "Adulto", "Anciano"]
+
+sexos = ["Hombre", "Mujer"]
+
+pieles = [
+"piel clara",
+"piel morena",
+"piel oscura"
 ]
 
-emociones = [
-    "feliz",
-    "triste",
-    "enojado",
-    "curioso",
-    "sorprendido"
+cabellos = [
+"cabello lacio corto",
+"cabello lacio largo",
+"cabello ondulado corto",
+"cabello ondulado largo",
+"cabello rizado corto",
+"cabello rizado largo"
 ]
 
-lugares = [
-    "una ciudad futurista",
-    "un castillo abandonado",
-    "el espacio",
-    "una isla misteriosa",
-    "un bosque mágico"
+ropa = [
+"estilo urbano",
+"ropa deportiva",
+"ropa elegante",
+"ropa casual",
+"estilo gótico"
 ]
 
-rarezas = [
-    "🟢 Común",
-    "🔮 Rara",
-    "✨ Épica",
-    "🏆 Legendaria"
+pasatiempos = [
+"leer",
+"dibujar",
+"jugar videojuegos",
+"hacer deporte",
+"escuchar música",
+"andar en bicicleta"
 ]
 
-if st.button("Generar Idea"):
-    
-    personaje = random.choice(personajes)
-    emocion = random.choice(emociones)
-    lugar = random.choice(lugares)
-    rareza = random.choice(rarezas)
+# PERSONAJE
 
-    st.success(f'Dibuja un {personaje} {emocion} en {lugar}')
-    st.markdown(f'### {rareza}')
+tipos = [
+"Mago",
+"Dragón",
+"Caballero",
+"Pirata",
+"Robot",
+"Duende",
+"Vampiro",
+"Hada",
+"Ninja",
+"Cyborg"
+]
+
+personalidades = [
+"Valiente",
+"Travieso",
+"Sabio",
+"Torpe",
+"Misterioso",
+"Alegre"
+]
+
+poderes = [
+"Control del fuego",
+"Magia de hielo",
+"Invisibilidad",
+"Telepatía",
+"Superfuerza",
+"Control de plantas"
+]
+
+accesorios = [
+"Espada mágica",
+"Libro encantado",
+"Amuleto antiguo",
+"Máscara dorada",
+"Martillo rúnico"
+]
+
+objetivos = [
+"Salvar un reino",
+"Encontrar un tesoro",
+"Derrotar a un villano",
+"Proteger la naturaleza",
+"Viajar en el tiempo"
+]
+
+# TREND CHALLENGE
+
+colores = [
+"Rojo",
+"Azul pastel",
+"Verde esmeralda",
+"Amarillo neón",
+"Púrpura"
+]
+
+frutas = [
+"Mango",
+"Sandía",
+"Cereza",
+"Limón",
+"Manzana"
+]
+
+animales = [
+"Panda",
+"Zorro",
+"Lobo",
+"Gato",
+"Águila"
+]
+
+acciones = [
+"Bailando",
+"Corriendo",
+"Cantando",
+"Saltando",
+"Posando"
+]
+
+estilos = [
+"Cyberpunk",
+"Vintage",
+"Elegante",
+"Boho",
+"Futurista"
+]
+
+objetos = [
+"Cámara vintage",
+"Paraguas roto",
+"Reloj de arena",
+"Globo aerostático",
+"Máscara"
+]
+
+# =====================
+
+# BOTONES
+
+# =====================
+
+col1, col2, col3 = st.columns(3)
+
+# PERSONA
+
+with col1:
+if st.button("🧑 Persona"):
+
+```
+    st.success(f"""
+```
+
+Edad: {random.choice(edades)}
+
+Sexo: {random.choice(sexos)}
+
+Piel: {random.choice(pieles)}
+
+Cabello: {random.choice(cabellos)}
+
+Ropa: {random.choice(ropa)}
+
+Pasatiempo: {random.choice(pasatiempos)}
+""")
+
+# PERSONAJE
+
+with col2:
+if st.button("🧙 Personaje"):
+
+```
+    st.success(f"""
+```
+
+Tipo: {random.choice(tipos)}
+
+Personalidad: {random.choice(personalidades)}
+
+Poder: {random.choice(poderes)}
+
+Accesorio: {random.choice(accesorios)}
+
+Objetivo: {random.choice(objetivos)}
+""")
+
+# TREND
+
+with col3:
+if st.button("🌈 Trend Challenge"):
+
+```
+    st.success(f"""
+```
+
+Color: {random.choice(colores)}
+
+Fruta: {random.choice(frutas)}
+
+Animal: {random.choice(animales)}
+
+Acción: {random.choice(acciones)}
+
+Estilo: {random.choice(estilos)}
+
+Objeto: {random.choice(objetos)}
+""")

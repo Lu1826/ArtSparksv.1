@@ -155,35 +155,74 @@ objetos = [
 "Máscara"
 ]
 
+# PERSONAJE EXISTENTE
+
+lugares = [
+    "una cafetería",
+    "el espacio",
+    "una isla desierta",
+    "un centro comercial",
+    "un castillo abandonado",
+    "un bosque mágico"
+]
+
+ropa_existente = [
+    "ropa de invierno",
+    "traje formal",
+    "uniforme escolar",
+    "ropa deportiva",
+    "armadura medieval"
+]
+
+climas = [
+    "tormenta",
+    "lluvia intensa",
+    "día soleado",
+    "nieve",
+    "niebla espesa"
+]
+
+animos = [
+    "feliz",
+    "triste",
+    "enfadado",
+    "pensativo",
+    "confundido",
+    "emocionado"
+]
+
+acciones_existente = [
+    "leyendo",
+    "corriendo",
+    "cocinando",
+    "bailando",
+    "escondiéndose",
+    "dibujando",
+    "explorando"
+]
+
 # =====================
 
 # BOTONES
 
 # =====================
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 
 # PERSONA
 
 with col1:
     if st.button("🧑 Persona"):
-        # Asegúrate de que todo lo que sigue 
-        # dentro del botón también tenga un nivel más de sangría
-        st.success(f"""...""")
-
-Edad: {random.choice(edades)}
-
-Sexo: {random.choice(sexos)}
-
-Piel: {random.choice(pieles)}
-
-Cabello: {random.choice(cabellos)}
-
-Ropa: {random.choice(ropa)}
-
-Pasatiempo: {random.choice(pasatiempos)}
-""")
-
+        texto_resultado = (
+            f"Edad: {random.choice(edades)}\n"
+            f"Sexo: {random.choice(sexos)}\n"
+            f"Piel: {random.choice(pieles)}\n"
+            f"Cabello: {random.choice(cabellos)}\n"
+            f"Ropa: {random.choice(ropa)}\n"
+            f"Pasatiempo: {random.choice(pasatiempos)}"
+        )
+        st.success(texto_resultado)
+        
 # PERSONAJE
 
 with col2:
@@ -208,5 +247,18 @@ with col3:
             f"Acción: {random.choice(acciones)}\n"
             f"Estilo: {random.choice(estilos)}\n"
             f"Objeto: {random.choice(objetos)}"
+        )
+        st.success(texto_resultado)
+
+# PERSONAJE EXISTENTE
+with col4:
+    if st.button("🎭 Personaje Existente"):
+        texto_resultado = (
+            "Dibuja a tu personaje favorito:\n\n"
+            f"Acción:\n{random.choice(acciones_existente)}\n\n"
+            f"Lugar:\n{random.choice(lugares)}\n\n"
+            f"Ropa:\n{random.choice(ropa_existente)}\n\n"
+            f"Clima:\n{random.choice(climas)}\n\n"
+            f"Estado de ánimo:\n{random.choice(animos)}"
         )
         st.success(texto_resultado)

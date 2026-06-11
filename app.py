@@ -38,7 +38,7 @@ rarezas = [
 if st.button("Generar Idea"):
     
     personaje = random.choice(personajes)
-    emoción = random.choice(emociones)
+    emocion = random.choice(emociones)
     lugar = random.choice(lugares)
     rareza = random.choice(rarezas)
 

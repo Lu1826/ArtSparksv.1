@@ -208,8 +208,7 @@ Objetivo: {random.choice(objetivos)}
 
 with col3:
     if st.button("📈 Trend Challenge"):
-        st.success(f"""---
-Color: {random.choice(colores)}
+        st.success(f"""Color: {random.choice(colores)}
 
 Fruta: {random.choice(frutas)}
 

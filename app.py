@@ -17,10 +17,10 @@ edades = ["Niño", "Adolescente", "Joven", "Adulto", "Anciano"]
 sexos = ["Hombre", "Mujer","Indefinido"]
 
 pieles = [
-"piel clara",
-"piel trigueña",
-"piel morena",
-"piel oscura"
+"clara",
+"trigueña",
+"morena",
+"oscura"
 ]
 
 cabellos = [

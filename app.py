@@ -208,14 +208,12 @@ Objetivo: {random.choice(objetivos)}
 
 with col3:
     if st.button("📈 Trend Challenge"):
-        st.success(f"""Color: {random.choice(colores)}
-
-Fruta: {random.choice(frutas)}
-
-Animal: {random.choice(animales)}
-
-Acción: {random.choice(acciones)}
-
-Estilo: {random.choice(estilos)}
-
-Objeto: {random.choice(objetos)}""")
+        texto_resultado = (
+            f"Color: {random.choice(colores)}\n"
+            f"Fruta: {random.choice(frutas)}\n"
+            f"Animal: {random.choice(animales)}\n"
+            f"Acción: {random.choice(acciones)}\n"
+            f"Estilo: {random.choice(estilos)}\n"
+            f"Objeto: {random.choice(objetos)}"
+        )
+        st.success(texto_resultado)

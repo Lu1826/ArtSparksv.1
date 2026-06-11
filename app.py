@@ -166,11 +166,10 @@ col1, col2, col3 = st.columns(3)
 # PERSONA
 
 with col1:
-if st.button("🧑 Persona"):
-
-```
-    st.success(f"""
-```
+    if st.button("🧑 Persona"):
+        # Asegúrate de que todo lo que sigue 
+        # dentro del botón también tenga un nivel más de sangría
+        st.success(f"""...""")
 
 Edad: {random.choice(edades)}
 

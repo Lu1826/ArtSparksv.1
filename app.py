@@ -454,7 +454,22 @@ with col4:
         )
         st.session_state.ultima_idea = texto_resultado
         st.success(texto_resultado)
+        
+# GUARDAR FAVORITOS
+st.divider()
 
+colA, colB = st.columns(2)
+
+with colA:
+    if st.button("⭐ Guardar en Favoritos"):
+
+        if st.session_state.ultima_idea != "":
+            st.session_state.favoritos.append(
+                st.session_state.ultima_idea
+            )
+            st.success("Idea guardada en favoritos")
+        else:
+            st.warning("Primero genera una idea")
 
 # BOTON DEAFIO DEL DIA
 

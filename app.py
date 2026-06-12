@@ -30,6 +30,8 @@ if "favoritos" not in st.session_state:
 
 if "ultima_idea" not in st.session_state:
     st.session_state.ultima_idea = ""
+if "mostrar_favoritos" not in st.session_state:
+    st.session_state.mostrar_favoritos = False
     
 
 # ESTADISTICAS
@@ -54,7 +56,7 @@ if "legendaria" not in st.session_state:
 st.title("🎨 ArtSpark")
 st.subheader("Generador creativo de ideas para artistas")
 
-#COLUMNA DE PERFIL
+# COLUMNA DE PERFIL
 with st.sidebar:
 
     st.title("👤 Mi Perfil ArtSpark")
@@ -73,37 +75,21 @@ with st.sidebar:
 
     st.subheader("Rarezas")
 
-    st.write(
-        f"🟢 Comunes: {st.session_state.comun}"
-    )
-
-    st.write(
-        f"🔮 Raras: {st.session_state.rara}"
-    )
-
-    st.write(
-        f"✨ Épicas: {st.session_state.epica}"
-    )
-
-    st.write(
-        f"🏆 Legendarias: {st.session_state.legendaria}"
-    )
+    st.write(f"🟢 Comunes: {st.session_state.comun}")
+    st.write(f"🔮 Raras: {st.session_state.rara}")
+    st.write(f"✨ Épicas: {st.session_state.epica}")
+    st.write(f"🏆 Legendarias: {st.session_state.legendaria}")
 
     st.divider()
 
+    # Mostrar/Ocultar favoritos
     if st.button("⭐ Ver Favoritos"):
+        st.session_state.mostrar_favoritos = not st.session_state.mostrar_favoritos
 
-        st.session_state.mostrar_favoritos = True
-            if len(st.session_state.favoritos) == 0:
-                st.info("No hay favoritos todavía")
+    st.divider()
 
-            else:
-                st.subheader("📚 Mis Favoritos")
-                for i, favorito in enumerate(
-                    st.session_state.favoritos,
-                    start=1
-                ):
-                    st.text(f"{i}. {favorito}")
+    # Aquí luego pondremos la racha
+    st.write("🔥 Racha: Próximamente")
 
 # CALCULADORA RAREZA
 def calcular_rareza(elementos):
@@ -486,3 +472,20 @@ st.divider()
 if st.button("📅 Desafío del Día"):
 
     st.info(generar_desafio_dia())
+
+# FAVORITOS
+if st.session_state.mostrar_favoritos:
+
+    st.subheader("⭐ Mis Favoritos")
+
+    if len(st.session_state.favoritos) == 0:
+
+        st.info("No tienes favoritos todavía")
+
+    else:
+
+        for i, favorito in enumerate(
+            st.session_state.favoritos,
+            start=1
+        ):
+            st.code(f"{i}. {favorito}")

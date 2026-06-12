@@ -96,7 +96,8 @@ st.subheader("Generador creativo de ideas para artistas")
 
 # COLUMNA DE PERFIL
 with st.sidebar:
-
+    
+datos = cargar_datos()
     st.title("👤 Mi Perfil ArtSpark")
 
     st.metric(
@@ -106,17 +107,17 @@ with st.sidebar:
 
     st.metric(
         "⭐ Favoritos",
-        len(st.session_state.favoritos)
+        len(datos["favoritos"])
     )
 
     st.divider()
 
     st.subheader("Rarezas")
 
-    st.write(f"🟢 Comunes: {st.session_state.comun}")
-    st.write(f"🔮 Raras: {st.session_state.rara}")
-    st.write(f"✨ Épicas: {st.session_state.epica}")
-    st.write(f"🏆 Legendarias: {st.session_state.legendaria}")
+    st.write(f"🟢 Comunes: {datos['estadisticas']['comun']}")
+    st.write(f"🔮 Raras: {datos['estadisticas']['rara']}")
+    st.write(f"✨ Épicas: {datos['estadisticas']['epica']}")
+    st.write(f"🏆 Legendarias: {datos['estadisticas']['legendaria']}")
 
     st.divider()
 
@@ -164,19 +165,23 @@ def calcular_rareza(elementos):
 
 def registrar_rareza(rareza):
 
-    st.session_state.total_generadas += 1
+    datos = cargar_datos()
+
+    datos["estadisticas"]["total"] += 1
 
     if "Común" in rareza:
-        st.session_state.comun += 1
+        datos["estadisticas"]["comun"] += 1
 
     elif "Rara" in rareza:
-        st.session_state.rara += 1
+        datos["estadisticas"]["rara"] += 1
 
     elif "Épica" in rareza:
-        st.session_state.epica += 1
+        datos["estadisticas"]["epica"] += 1
 
     elif "Legendaria" in rareza:
-        st.session_state.legendaria += 1
+        datos["estadisticas"]["legendaria"] += 1
+
+    guardar_datos(datos)
 # LISTAS
 
 # =====================

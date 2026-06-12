@@ -1,6 +1,14 @@
 import streamlit as st
 import random
 
+# GUARDAR FAVORITOS
+
+if "favoritos" not in st.session_state:
+    st.session_state.favoritos = []
+
+if "ultima_idea" not in st.session_state:
+    st.session_state.ultima_idea = ""
+
 st.title("🎨 ArtSpark")
 st.subheader("Generador creativo de ideas para artistas")
 
@@ -142,12 +150,12 @@ frutas = [
 "Sandía",
 "Cereza",
 "Limón",
-"Manzana"
-"Arandano"
-"Fresa"
-"Maracuya"
-"Naranja"
-"Frambuesa"
+"Manzana",
+"Arandano",
+"Fresa",
+"Maracuya",
+"Naranja",
+"Frambuesa",
 "Piña"
 ]
 
@@ -263,6 +271,7 @@ with col1:
             f"Ropa: {random.choice(ropa)}\n"
             f"Pasatiempo: {random.choice(pasatiempos)}"
         )
+        st.session_state.ultima_idea = texto_resultado
         st.success(texto_resultado)
         
 # PERSONAJE
@@ -291,6 +300,7 @@ with col2:
             f"Rareza: {rareza}"
         )
 
+        st.session_state.ultima_idea = texto_resultado
         st.success(texto_resultado)
 
 # TREND
@@ -321,6 +331,7 @@ with col3:
             f"Rareza: {rareza}"
         )
 
+        st.session_state.ultima_idea = texto_resultado
         st.success(texto_resultado)
 
 # PERSONAJE EXISTENTE
@@ -334,4 +345,37 @@ with col4:
             f"Clima:\n{random.choice(climas)}\n\n"
             f"Estado de ánimo:\n{random.choice(animos)}"
         )
+        st.session_state.ultima_idea = texto_resultado
         st.success(texto_resultado)
+
+st.divider()
+
+colA, colB = st.columns(2)
+
+# BOTON FAVORITOS
+
+with colA:
+    if st.button("⭐ Guardar en Favoritos"):
+
+        if st.session_state.ultima_idea != "":
+            st.session_state.favoritos.append(
+                st.session_state.ultima_idea
+            )
+            st.success("Idea guardada en favoritos")
+        else:
+            st.warning("Primero genera una idea")
+
+with colB:
+    if st.button("📚 Ver Favoritos"):
+
+        if len(st.session_state.favoritos) == 0:
+            st.info("No hay favoritos todavía")
+
+        else:
+            st.subheader("📚 Mis Favoritos")
+
+            for i, favorito in enumerate(
+                st.session_state.favoritos,
+                start=1
+            ):
+                st.text(f"{i}. {favorito}")

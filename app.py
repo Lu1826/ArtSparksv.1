@@ -470,6 +470,20 @@ with colA:
             st.success("Idea guardada en favoritos")
         else:
             st.warning("Primero genera una idea")
+with colB:
+    if st.button("📚 Ver Favoritos"):
+
+        if len(st.session_state.favoritos) == 0:
+            st.info("No hay favoritos todavía")
+
+        else:
+            st.subheader("📚 Mis Favoritos")
+
+            for i, favorito in enumerate(
+                st.session_state.favoritos,
+                start=1
+            ):
+                st.text(f"{i}. {favorito}")
 
 # BOTON DEAFIO DEL DIA
 

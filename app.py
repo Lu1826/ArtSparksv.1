@@ -18,10 +18,10 @@ def generar_desafio_dia():
     random.seed()
 
     return (
-        f"Dibuja un {animal} "
-        f"{accion.lower()}, con estilo {estilo} "
-        f" con una persona sosteniendo {objeto.lower()}"
-        f" ,como color principal {color}."
+        f"Dibuja una persona "
+        f"{accion.lower()}, con estilo "
+        f" sosteniendo {objeto.lower()}"
+        f" , con estilo {estilo} y como color principal el{color}."
     )
 # GUARDAR FAVORITOS
 

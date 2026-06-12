@@ -19,7 +19,7 @@ def generar_desafio_dia():
 
     return (
         f"Dibuja una persona "
-        f"{accion.lower()}, con estilo "
+        f"{accion.lower()}"
         f" sosteniendo {objeto.lower()}"
         f" , con estilo {estilo} y como color principal el{color}."
     )

@@ -1,6 +1,44 @@
 import streamlit as st
 import random
 from datetime import date
+import json
+import os
+
+# ALMACENAR DATOS
+
+ARCHIVO_DATOS = "datos.json"
+
+if not os.path.exists(ARCHIVO_DATOS):
+
+    datos_iniciales = {
+    "favoritos": [],
+
+    "estadisticas": {
+        "total": 0,
+        "comun": 0,
+        "rara": 0,
+        "epica": 0,
+        "legendaria": 0
+    },
+
+    "racha": {
+        "actual": 0,
+        "mejor": 0,
+        "ultima_fecha": ""
+    }
+}
+    with open(ARCHIVO_DATOS, "w") as f:
+        json.dump(datos_iniciales, f, indent=4)
+
+def cargar_datos():
+
+    with open(ARCHIVO_DATOS, "r") as f:
+        return json.load(f)
+
+def guardar_datos(datos):
+
+    with open(ARCHIVO_DATOS, "w") as f:
+        json.dump(datos, f, indent=4)
 
 # DESAFIO DEL DIA
 
@@ -458,10 +496,17 @@ with colA:
     if st.button("⭐ Guardar en Favoritos"):
 
         if st.session_state.ultima_idea != "":
-            st.session_state.favoritos.append(
+
+            datos = cargar_datos()
+
+            datos["favoritos"].append(
                 st.session_state.ultima_idea
             )
+
+            guardar_datos(datos)
+
             st.success("Idea guardada en favoritos")
+
         else:
             st.warning("Primero genera una idea")
 

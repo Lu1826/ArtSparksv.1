@@ -1,5 +1,38 @@
 import streamlit as st
 import random
+from datetime import date
+
+# DESAFIO DEL DIA
+
+def generar_desafio_dia():
+
+    hoy = str(date.today())
+
+    # Hace que el resultado sea el mismo durante todo el día
+    random.seed(hoy)
+
+    color = random.choice(colores)
+    animal = random.choice(animales)
+    estilo = random.choice(estilos)
+    objeto = random.choice(objetos)
+
+    desafio = f"""
+🎨 DESAFÍO DEL DÍA
+
+Color: {color}
+
+Animal: {animal}
+
+Estilo: {estilo}
+
+Objeto: {objeto}
+
+Crea una ilustración usando estos elementos.
+"""
+
+    random.seed()
+
+    return desafio
 
 # GUARDAR FAVORITOS
 
@@ -448,3 +481,11 @@ if st.button("📊 Ver Estadísticas"):
     st.write(
         f"🏆 Legendarias: {st.session_state.legendaria}"
     )
+
+# BOTON DEAFIO DEL DIA
+
+st.divider()
+
+if st.button("📅 Desafío del Día"):
+
+    st.info(generar_desafio_dia())

@@ -9,10 +9,29 @@ if "favoritos" not in st.session_state:
 if "ultima_idea" not in st.session_state:
     st.session_state.ultima_idea = ""
 
+# ESTADISTICAS
+
+if "total_generadas" not in st.session_state:
+    st.session_state.total_generadas = 0
+
+if "comun" not in st.session_state:
+    st.session_state.comun = 0
+
+if "rara" not in st.session_state:
+    st.session_state.rara = 0
+
+if "epica" not in st.session_state:
+    st.session_state.epica = 0
+
+if "legendaria" not in st.session_state:
+    st.session_state.legendaria = 0
+
+# TITLE
+
 st.title("🎨 ArtSpark")
 st.subheader("Generador creativo de ideas para artistas")
 
-# =====================
+# CALCULADORA RAREZA
 def calcular_rareza(elementos):
 
     palabras_raras = [
@@ -42,6 +61,24 @@ def calcular_rareza(elementos):
         return "🔮 Rara"
     else:
         return "🟢 Común"
+        
+# REGISTRAR RAREZAS/ESTADISTICAS
+
+def registrar_rareza(rareza):
+
+    st.session_state.total_generadas += 1
+
+    if "Común" in rareza:
+        st.session_state.comun += 1
+
+    elif "Rara" in rareza:
+        st.session_state.rara += 1
+
+    elif "Épica" in rareza:
+        st.session_state.epica += 1
+
+    elif "Legendaria" in rareza:
+        st.session_state.legendaria += 1
 # LISTAS
 
 # =====================
@@ -291,6 +328,8 @@ with col2:
             objetivo
         ])
 
+        registrar_rareza(rareza)
+
         texto_resultado = (
             f"Tipo: {tipo}\n"
             f"Personalidad: {personalidad}\n"
@@ -320,6 +359,8 @@ with col3:
             estilo,
             objeto
         ])
+
+        registrar_rareza(rareza)
 
         texto_resultado = (
             f"Color: {color}\n"
@@ -379,3 +420,31 @@ with colB:
                 start=1
             ):
                 st.text(f"{i}. {favorito}")
+
+# BOTON ESTADISTICAS
+
+st.divider()
+
+if st.button("📊 Ver Estadísticas"):
+
+    st.subheader("📊 Estadísticas ArtSpark")
+
+    st.write(
+        f"Total de ideas generadas: {st.session_state.total_generadas}"
+    )
+
+    st.write(
+        f"🟢 Comunes: {st.session_state.comun}"
+    )
+
+    st.write(
+        f"🔮 Raras: {st.session_state.rara}"
+    )
+
+    st.write(
+        f"✨ Épicas: {st.session_state.epica}"
+    )
+
+    st.write(
+        f"🏆 Legendarias: {st.session_state.legendaria}"
+    )

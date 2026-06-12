@@ -7,33 +7,21 @@ from datetime import date
 def generar_desafio_dia():
 
     hoy = str(date.today())
-
-    # Hace que el resultado sea el mismo durante todo el día
     random.seed(hoy)
 
-    color = random.choice(colores)
     animal = random.choice(animales)
+    color = random.choice(colores)
+    accion = random.choice(acciones)
     estilo = random.choice(estilos)
     objeto = random.choice(objetos)
 
-    desafio = f"""
-🎨 DESAFÍO DEL DÍA
-
-Color: {color}
-
-Animal: {animal}
-
-Estilo: {estilo}
-
-Objeto: {objeto}
-
-Crea una ilustración usando estos elementos.
-"""
-
     random.seed()
 
-    return desafio
-
+    return (
+        f"Dibuja un {animal} de color {color}, "
+        f"{accion.lower()}, con estilo {estilo} "
+        f"y sosteniendo un {objeto.lower()}."
+    )
 # GUARDAR FAVORITOS
 
 if "favoritos" not in st.session_state:

@@ -95,9 +95,9 @@ st.title("🎨 ArtSpark")
 st.subheader("Generador creativo de ideas para artistas")
 
 # COLUMNA DE PERFIL
+datos = cargar_datos()
 with st.sidebar:
     
-datos = cargar_datos()
     st.title("👤 Mi Perfil ArtSpark")
 
     st.metric(

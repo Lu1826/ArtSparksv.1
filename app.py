@@ -232,7 +232,7 @@ tipos = [
 "Vampiro",
 "Hada",
 "Ninja",
-"Cyborg"
+"Cyborg",
 "Zombi"
 ]
 
@@ -523,14 +523,16 @@ if st.session_state.mostrar_favoritos:
 
     st.subheader("⭐ Mis Favoritos")
 
-    if len(st.session_state.favoritos) == 0:
+    datos = cargar_datos()
+
+    if len(datos["favoritos"]) == 0:
 
         st.info("No tienes favoritos todavía")
 
     else:
 
         for i, favorito in enumerate(
-            st.session_state.favoritos,
+            datos["favoritos"],
             start=1
         ):
             st.code(f"{i}. {favorito}")

@@ -30,6 +30,9 @@ if "favoritos" not in st.session_state:
 
 if "ultima_idea" not in st.session_state:
     st.session_state.ultima_idea = ""
+    
+if "mostrar_favoritos" not in st.session_state:
+    st.session_state.mostrar_favoritos = False
 
 # ESTADISTICAS
 
@@ -52,6 +55,47 @@ if "legendaria" not in st.session_state:
 
 st.title("🎨 ArtSpark")
 st.subheader("Generador creativo de ideas para artistas")
+
+#COLUMNA DE PERFIL
+with st.sidebar:
+
+    st.title("👤 Mi Perfil ArtSpark")
+
+    st.metric(
+        "📊 Ideas Generadas",
+        st.session_state.total_generadas
+    )
+
+    st.metric(
+        "⭐ Favoritos",
+        len(st.session_state.favoritos)
+    )
+
+    st.divider()
+
+    st.subheader("Rarezas")
+
+    st.write(
+        f"🟢 Comunes: {st.session_state.comun}"
+    )
+
+    st.write(
+        f"🔮 Raras: {st.session_state.rara}"
+    )
+
+    st.write(
+        f"✨ Épicas: {st.session_state.epica}"
+    )
+
+    st.write(
+        f"🏆 Legendarias: {st.session_state.legendaria}"
+    )
+
+    st.divider()
+
+    if st.button("⭐ Ver Favoritos"):
+
+        st.session_state.mostrar_favoritos = True
 
 # CALCULADORA RAREZA
 def calcular_rareza(elementos):

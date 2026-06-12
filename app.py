@@ -443,33 +443,6 @@ with colB:
             ):
                 st.text(f"{i}. {favorito}")
 
-# BOTON ESTADISTICAS
-
-st.divider()
-
-if st.button("📊 Ver Estadísticas"):
-
-    st.subheader("📊 Estadísticas ArtSpark")
-
-    st.write(
-        f"Total de ideas generadas: {st.session_state.total_generadas}"
-    )
-
-    st.write(
-        f"🟢 Comunes: {st.session_state.comun}"
-    )
-
-    st.write(
-        f"🔮 Raras: {st.session_state.rara}"
-    )
-
-    st.write(
-        f"✨ Épicas: {st.session_state.epica}"
-    )
-
-    st.write(
-        f"🏆 Legendarias: {st.session_state.legendaria}"
-    )
 
 # BOTON DEAFIO DEL DIA
 

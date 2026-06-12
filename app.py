@@ -31,8 +31,6 @@ if "favoritos" not in st.session_state:
 if "ultima_idea" not in st.session_state:
     st.session_state.ultima_idea = ""
     
-if "mostrar_favoritos" not in st.session_state:
-    st.session_state.mostrar_favoritos = False
 
 # ESTADISTICAS
 

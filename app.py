@@ -4,6 +4,12 @@ from datetime import date
 import json
 import os
 
+#FONDO
+st.image(
+    "assets/fondo.png",
+    use_container_width=True
+)
+
 # ALMACENAR DATOS
 
 ARCHIVO_DATOS = "datos.json"

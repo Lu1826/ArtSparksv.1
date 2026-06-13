@@ -3,7 +3,30 @@ import random
 from datetime import date
 import json
 import os
+import base64
 
+#IMAGEN DE FONDO
+def get_base64(imagen):
+    with open(imagen, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+fondo = get_base64("assets/fondo.png")
+
+st.markdown(
+    f"""
+    <style>
+
+    .stApp {{
+        background-image: url("data:image/png;base64,{fondo}");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }}
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # ALMACENAR DATOS
 
 ARCHIVO_DATOS = "datos.json"

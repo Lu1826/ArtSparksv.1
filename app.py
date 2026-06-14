@@ -459,7 +459,7 @@ with col1:
 # PERSONAJE
 
 with col2:
-    if st.button("🧙CHARACTER"):
+    if st.button("CHARACTER"):
 
         tipo = random.choice(tipos)
         personalidad = random.choice(personalidades)
@@ -522,7 +522,7 @@ with col3:
 
 # PERSONAJE EXISTENTE
 with col4:
-    if st.button("🎭CHARACTER EXIST"):
+    if st.button("CHARACTER EXIST"):
         texto_resultado = (
             "Dibuja a tu personaje favorito:\n\n"
             f"Acción:\n{random.choice(acciones_existente)}\n\n"

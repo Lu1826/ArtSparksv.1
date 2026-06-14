@@ -424,7 +424,7 @@ with st.sidebar:
         <div style="
             text-align:center;
             color:black;
-            font-size:24px;
+            font-size:15px;
             font-weight:bold;
             padding-left:10px;
             padding-right:10px;

@@ -436,7 +436,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-col1, col2, col3, col4 = st.columns([2,2,2,2], gap="large")
+espacio1, col1, espacio2, col2, espacio3, col3, espacio4, col4, espacio5 = st.columns(
+    [1,3,1,3,1,3,1,3,1]
+)
 
 # PERSONA
 

@@ -154,7 +154,7 @@ with st.sidebar:
         {len(datos["favoritos"])}
     </div>
 
-    <div style="height:65px;"></div>
+    <div style="height:69px;"></div>
 
     <div style="
         text-align:center;

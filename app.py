@@ -11,7 +11,7 @@ def get_base64(imagen):
     with open(imagen, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-img = get_base64("PROFILE.png")
+img = get_base64("assets/PROFILE.png")
 fondo = get_base64("assets/fondo.png")
 
 st.markdown(f"""

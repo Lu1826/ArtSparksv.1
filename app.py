@@ -130,38 +130,47 @@ if "legendaria" not in st.session_state:
 # COLUMNA DE PERFIL
 datos = cargar_datos()
 with st.sidebar:
-    
-    st.title("👤 Mi Perfil ArtSpark")
+    st.markdown(f"""
+    <div style="height:135px;"></div>
 
-    st.metric(
-        "📊 Ideas Generadas",
-        st.session_state.total_generadas
-    )
+    <div style="
+        text-align:center;
+        font-size:42px;
+        font-weight:bold;
+        color:white;
+    ">
+        {st.session_state.total_generadas}
+    </div>
 
-    st.metric(
-        "⭐ Favoritos",
-        len(datos["favoritos"])
-    )
+    <div style="height:85px;"></div>
 
-    st.divider()
+    <div style="
+        text-align:center;
+        font-size:42px;
+        font-weight:bold;
+        color:white;
+    ">
+        {len(datos["favoritos"])}
+    </div>
 
-    st.subheader("Rarezas")
+    <div style="height:130px;"></div>
 
-    st.write(f"🟢 Comunes: {datos['estadisticas']['comun']}")
-    st.write(f"🔮 Raras: {datos['estadisticas']['rara']}")
-    st.write(f"✨ Épicas: {datos['estadisticas']['epica']}")
-    st.write(f"🏆 Legendarias: {datos['estadisticas']['legendaria']}")
-
-    st.divider()
+    <div style="
+        font-size:24px;
+        color:white;
+        line-height:2;
+    ">
+        🟢 {datos['estadisticas']['comun']}<br>
+        🔮 {datos['estadisticas']['rara']}<br>
+        ✨ {datos['estadisticas']['epica']}<br>
+        🏆 {datos['estadisticas']['legendaria']}
+    </div>
+    """, unsafe_allow_html=True)
 
     # Mostrar/Ocultar favoritos
     if st.button("⭐ VIEW FAVORITES"):
         st.session_state.mostrar_favoritos = not st.session_state.mostrar_favoritos
 
-    st.divider()
-
-    # Aquí luego pondremos la racha
-    st.write("🔥 Racha: Próximamente")
 
 # CALCULADORA RAREZA
 def calcular_rareza(elementos):

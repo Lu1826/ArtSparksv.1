@@ -126,7 +126,7 @@ if "mostrar_favoritos" not in st.session_state:
     st.session_state.mostrar_favoritos = False
     
 
-# ESTADISTICAS
+# ESTADISTICAS NO IMPORTANTE NO FUNCIONA IGNORAR
 
 if "total_generadas" not in st.session_state:
     st.session_state.total_generadas = 0
@@ -371,11 +371,11 @@ def generar_desafio_dia():
     random.seed()
 
     return (
-    f"Dibuja una persona {accion.lower()} "
-    f"sosteniendo/usando un{objeto.lower()} "
-    f"acompañado de un {animal.lower()}, "
-    f"con estilo {estilo} "
-    f"y como color principal el {color}."
+    f"Draw a people{accion.lower()} "
+    f"who is using a{objeto.lower()} "
+    f"with an {animal.lower()}, "
+    f"with a style of {estilo} "
+    f"and like a principal color {color}."
 )
 # =====================
 

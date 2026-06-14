@@ -424,13 +424,10 @@ st.markdown("<br>" * 9, unsafe_allow_html=True)
 st.markdown("""
 <style>
 
-/* TODOS LOS BOTONES ROJOS */
+
 .stButton > button {
     width: 170px !important;
     height: 70px !important;
-
-    background-color: red !important;
-    color: white !important;
 
     font-size: 22px !important;
     font-weight: 900 !important;

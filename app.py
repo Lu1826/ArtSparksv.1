@@ -672,7 +672,7 @@ st.markdown("---")
 
 if st.session_state.resultado != "":
 
-    st.subheader("🎨 Resultado")
+    st.subheader("🎨 RESULT")
 
     st.markdown(f"""
     <div style="

@@ -425,10 +425,9 @@ st.markdown("""
     width: 220px;
     height: 70px;
 
-    font-size: 50 px;
-    font-weight: bold;
+    font-size: 24px !important;
+    font-weight: 900 !important;
 
-    border-radius: 20px;
 
 }
 
@@ -437,7 +436,7 @@ st.markdown("""
 
 
 esp1, col1, esp2, col2, esp3, col3, esp4, col4, esp5 = st.columns(
-    [1, 2, 0.8, 2, 0.8, 2, 0.8, 2, 1]
+    [1, 2, 1, 2, 1, 2, 1, 2, 1]
 )
 
 # PERSONA

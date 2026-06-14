@@ -141,7 +141,7 @@ with st.sidebar:
     st.divider()
 
     # Mostrar/Ocultar favoritos
-    if st.button("⭐ Ver Favoritos"):
+    if st.button("⭐ VIEW FAVORITES"):
         st.session_state.mostrar_favoritos = not st.session_state.mostrar_favoritos
 
     st.divider()
@@ -589,14 +589,14 @@ with colA:
 
 st.divider()
 
-if st.button("📅 Desafío del Día"):
+if st.button("📅CHALLENGE OF THE DAY"):
 
     st.info(generar_desafio_dia())
 
 # FAVORITOS
 if st.session_state.mostrar_favoritos:
 
-    st.subheader("⭐ Mis Favoritos")
+    st.subheader("⭐ MY FAVORITES")
 
     datos = cargar_datos()
 

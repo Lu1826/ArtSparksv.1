@@ -344,7 +344,7 @@ def generar_desafio_dia():
 
 # COLUMNA DE PERFIL
 datos = cargar_datos()
-{datos["estadisticas"]["total"]}
+
 with st.sidebar:
     st.markdown(f"""
 

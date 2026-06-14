@@ -143,7 +143,7 @@ with st.sidebar:
         {st.session_state.total_generadas}
     </div>
 
-    <div style="height:55px;"></div>
+    <div style="height:49px;"></div>
 
     <div style="
         text-align:center;
@@ -154,7 +154,7 @@ with st.sidebar:
         {len(datos["favoritos"])}
     </div>
 
-    <div style="height:50px;"></div>
+    <div style="height:60px;"></div>
 
     <div style="
         text-align:center;

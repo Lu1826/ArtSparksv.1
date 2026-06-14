@@ -421,19 +421,18 @@ st.markdown("<br>" * 9, unsafe_allow_html=True)
 
 #TAMAÑO LETRA Y BOTONES
 
-st.markdown("""
-<style>
-
-
+st.markdown(""" 
+<style> 
 .stButton > button {
-    width: 170px !important;
-    height: 70px !important;
-
-    font-size: 22px !important;
-    font-weight: 900 !important;
-}
-
-</style>
+    width: 170px !important; 
+    height: 70px !important; 
+} 
+/* TEXTO DEL BOTÓN */ 
+.stButton > button p { 
+    font-size: 22px !important; 
+    font-weight: 900 !important; 
+} 
+</style> 
 """, unsafe_allow_html=True)
 
 #RESULTADO

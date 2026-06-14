@@ -415,29 +415,34 @@ palabras_raras = [
 # BOTONES
 
 # =====================
+
+#ESPACIO HACIA ABAJO PARA BOTONES
 st.markdown("<br>" * 10, unsafe_allow_html=True)
+
+#TAMAÑO LETRA Y BOTONES
 
 st.markdown("""
 <style>
 
 .stButton > button {
+    width: 220px !important;
+    height: 70px !important;
+}
 
-    width: 220px;
-    height: 70px;
-
-    font-size: 24px !important;
+/* TEXTO DEL BOTÓN */
+.stButton > button p {
+    font-size: 22px !important;
     font-weight: 900 !important;
+}
 
-
+/* También por si Streamlit usa span */
+.stButton > button span {
+    font-size: 22px !important;
+    font-weight: 900 !important;
 }
 
 </style>
 """, unsafe_allow_html=True)
-
-
-esp1, col1, esp2, col2, esp3, col3, esp4, col4, esp5 = st.columns(
-    [1, 2, 1, 2, 1, 2, 1, 2, 1]
-)
 
 # PERSONA
 

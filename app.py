@@ -335,7 +335,7 @@ def generar_desafio_dia():
 
     return (
     f"Dibuja una persona {accion.lower()} "
-    f"sosteniendo {objeto.lower()} "
+    f"sosteniendo un{objeto.lower()} "
     f"acompañado de un {animal.lower()}, "
     f"con estilo {estilo} "
     f"y como color principal el {color}."
@@ -418,7 +418,7 @@ with st.sidebar:
     if st.button("⭐ VIEW FAVORITES"):
         st.session_state.mostrar_favoritos = not st.session_state.mostrar_favoritos
 
-    st.markdown("<div style='height:180px'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height:150px'></div>", unsafe_allow_html=True)
 # CHALLENGE OF THE DAY
     st.markdown(f"""
         <div style="

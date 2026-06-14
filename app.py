@@ -415,7 +415,7 @@ palabras_raras = [
 # BOTONES
 
 # =====================
-st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
+st.markdown("<br>" * 8, unsafe_allow_html=True)
 
 st.markdown("""
 <style>

@@ -154,7 +154,7 @@ with st.sidebar:
         {len(datos["favoritos"])}
     </div>
 
-    <div style="height:63px;"></div>
+    <div style="height:65px;"></div>
 
     <div style="
         text-align:center;
@@ -165,7 +165,7 @@ with st.sidebar:
         {datos['estadisticas']['comun']}
     </div>
 
-    <div style="height:20px;"></div>
+    <div style="height:18px;"></div>
 
     <div style="
         text-align:center;
@@ -176,7 +176,7 @@ with st.sidebar:
         {datos['estadisticas']['rara']}
     </div>
 
-    <div style="height:25px;"></div>
+    <div style="height:20px;"></div>
 
     <div style="
         text-align:center;
@@ -187,7 +187,7 @@ with st.sidebar:
         {datos['estadisticas']['epica']}
     </div>
 
-    <div style="height:25px;"></div>
+    <div style="height:20px;"></div>
 
     <div style="
         text-align:center;

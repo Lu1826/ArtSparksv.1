@@ -444,7 +444,7 @@ col1, col2, col3, col4 = st.columns(4, gap="large")
 # PERSONA
 
 with col1:
-    if st.button("🧑 Persona"):
+    if st.button("🧑 PEOPLE"):
         texto_resultado = (
             f"Edad: {random.choice(edades)}\n"
             f"Sexo: {random.choice(sexos)}\n"
@@ -459,7 +459,7 @@ with col1:
 # PERSONAJE
 
 with col2:
-    if st.button("🧙 Personaje"):
+    if st.button("🧙 CHARACTER"):
 
         tipo = random.choice(tipos)
         personalidad = random.choice(personalidades)
@@ -490,7 +490,7 @@ with col2:
 # TREND
 
 with col3:
-    if st.button("🌈 Trend Challenge"):
+    if st.button("🌈FULL CHALLENGE"):
 
         color = random.choice(colores)
         fruta = random.choice(frutas)
@@ -522,7 +522,7 @@ with col3:
 
 # PERSONAJE EXISTENTE
 with col4:
-    if st.button("🎭 Personaje Existente"):
+    if st.button("🎭 CHARACTER EXIST"):
         texto_resultado = (
             "Dibuja a tu personaje favorito:\n\n"
             f"Acción:\n{random.choice(acciones_existente)}\n\n"

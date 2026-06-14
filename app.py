@@ -77,27 +77,7 @@ def guardar_datos(datos):
     with open(ARCHIVO_DATOS, "w") as f:
         json.dump(datos, f, indent=4)
 
-# DESAFIO DEL DIA
 
-def generar_desafio_dia():
-
-    hoy = str(date.today())
-    random.seed(hoy)
-
-    animal = random.choice(animales)
-    color = random.choice(colores)
-    accion = random.choice(acciones)
-    estilo = random.choice(estilos)
-    objeto = random.choice(objetos)
-
-    random.seed()
-
-    return (
-        f"Dibuja una persona "
-        f"{accion.lower()}"
-        f" sosteniendo {objeto.lower()}"
-        f" , con estilo {estilo} y como color principal el {color}."
-    )
 # GUARDAR FAVORITOS
 
 if "favoritos" not in st.session_state:
@@ -205,18 +185,18 @@ with st.sidebar:
 
     st.markdown("<div style='height:180px'></div>", unsafe_allow_html=True)
 # CHALLENGE OF THE DAY
-st.markdown(f"""
-    <div style="
-        text-align:center;
-        color:black;
-        font-size:13px;
-        font-weight:bold;
-        padding-left:10px;
-        padding-right:10px;
-    ">
-    {generar_desafio_dia()}
-    </div>    
-    """, unsafe_allow_html=True)
+    st.markdown(f"""
+        <div style="
+            text-align:center;
+            color:black;
+            font-size:13px;
+            font-weight:bold;
+            padding-left:10px;
+            padding-right:10px;
+        ">
+        {generar_desafio_dia()}
+        </div>    
+        """, unsafe_allow_html=True)
 # CALCULADORA RAREZA
 def calcular_rareza(elementos):
 
@@ -463,6 +443,29 @@ acciones_existente = [
     "dibujando",
     "explorando"
 ]
+
+# DESAFIO DEL DIA
+
+def generar_desafio_dia():
+
+    hoy = str(date.today())
+    random.seed(hoy)
+
+    animal = random.choice(animales)     #ERROR
+    color = random.choice(colores)
+    accion = random.choice(acciones)
+    estilo = random.choice(estilos)
+    objeto = random.choice(objetos)
+
+    random.seed()
+
+    return (
+        f"Dibuja una persona "
+        f"{accion.lower()} 
+        f" sosteniendo {objeto.lower()} acompañado de un"
+        f"{animal.lower()}"
+        f" , con estilo {estilo} y como color principal el {color}."
+    )
 
 # NIVELES DE RAREZA
 

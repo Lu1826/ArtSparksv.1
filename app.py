@@ -422,10 +422,10 @@ st.markdown("""
 
 .stButton > button {
 
-    width: 300px;
-    height: 80px;
+    width: 220px;
+    height: 70px;
 
-    font-size: 28px;
+    font-size: 34px;
     font-weight: bold;
 
     border-radius: 20px;
@@ -436,7 +436,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4 = st.columns([2,2,2,2], gap="large")
 
 # PERSONA
 

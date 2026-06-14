@@ -425,7 +425,7 @@ st.markdown("""
     width: 220px;
     height: 70px;
 
-    font-size: 34px;
+    font-size: 50 px;
     font-weight: bold;
 
     border-radius: 20px;

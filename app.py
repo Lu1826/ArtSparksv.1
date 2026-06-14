@@ -136,7 +136,7 @@ with st.sidebar:
 
     <div style="
         text-align:center;
-        font-size:34px;
+        font-size:20px;
         font-weight:bold;
         color:white;
     ">

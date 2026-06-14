@@ -417,7 +417,7 @@ palabras_raras = [
 # =====================
 
 #ESPACIO HACIA ABAJO PARA BOTONES
-st.markdown("<br>" * 10, unsafe_allow_html=True)
+st.markdown("<br>" * 9, unsafe_allow_html=True)
 
 #TAMAÑO LETRA Y BOTONES
 

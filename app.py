@@ -131,18 +131,19 @@ if "legendaria" not in st.session_state:
 datos = cargar_datos()
 with st.sidebar:
     st.markdown(f"""
-    <div style="height:135px;"></div>
+
+    <div style="height:170px;"></div>
 
     <div style="
         text-align:center;
-        font-size:42px;
+        font-size:45px;
         font-weight:bold;
         color:white;
     ">
         {st.session_state.total_generadas}
     </div>
 
-    <div style="height:85px;"></div>
+    <div style="height:95px;"></div>
 
     <div style="
         text-align:center;
@@ -153,20 +154,51 @@ with st.sidebar:
         {len(datos["favoritos"])}
     </div>
 
-    <div style="height:130px;"></div>
+    <div style="height:85px;"></div>
 
     <div style="
-        font-size:24px;
-        color:white;
-        line-height:2;
+        text-align:center;
+        font-size:42px;
+        font-weight:bold;
+        color:#39ff14;
     ">
-        🟢 {datos['estadisticas']['comun']}<br>
-        🔮 {datos['estadisticas']['rara']}<br>
-        ✨ {datos['estadisticas']['epica']}<br>
-        🏆 {datos['estadisticas']['legendaria']}
+        {datos['estadisticas']['comun']}
     </div>
-    """, unsafe_allow_html=True)
 
+    <div style="height:45px;"></div>
+
+    <div style="
+        text-align:center;
+        font-size:42px;
+        font-weight:bold;
+        color:#c77dff;
+    ">
+        {datos['estadisticas']['rara']}
+    </div>
+
+    <div style="height:45px;"></div>
+
+    <div style="
+        text-align:center;
+        font-size:42px;
+        font-weight:bold;
+        color:#00d4ff;
+    ">
+        {datos['estadisticas']['epica']}
+    </div>
+
+    <div style="height:45px;"></div>
+
+    <div style="
+        text-align:center;
+        font-size:42px;
+        font-weight:bold;
+        color:#ffd700;
+    ">
+        {datos['estadisticas']['legendaria']}
+    </div>
+
+    """, unsafe_allow_html=True)
     # Mostrar/Ocultar favoritos
     if st.button("⭐ VIEW FAVORITES"):
         st.session_state.mostrar_favoritos = not st.session_state.mostrar_favoritos

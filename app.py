@@ -4,27 +4,39 @@ from datetime import date
 import json
 import os
 import base64
+import streamlit as st
+
 
 #MUSIC
+def music_player(file_path):
 
-def autoplay_audio(file_path):
     with open(file_path, "rb") as f:
-        data = f.read()
+        audio_bytes = f.read()
 
-    b64 = base64.b64encode(data).decode()
+    audio_base64 = base64.b64encode(audio_bytes).decode()
 
     st.markdown(
         f"""
-        <audio autoplay loop>
-            <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+        <div style="
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            background-color: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 10px;
+        ">
+
+        <audio id="bgmusic" controls loop>
+            <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mp3">
         </audio>
+
+        </div>
         """,
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
 
-autoplay_audio("assets/music.mp3")
-
-st.audio("assets/music.mp3")
+music_player("assets/music.mp3")
 #BARRA LATERAL DE FONDO
 
 def get_base64(imagen):

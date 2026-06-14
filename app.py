@@ -132,66 +132,66 @@ datos = cargar_datos()
 with st.sidebar:
     st.markdown(f"""
 
-    <div style="height:170px;"></div>
+    <div style="height:155px;"></div>
 
     <div style="
         text-align:center;
-        font-size:45px;
+        font-size:34px;
         font-weight:bold;
         color:white;
     ">
         {st.session_state.total_generadas}
     </div>
 
-    <div style="height:95px;"></div>
+    <div style="height:58px;"></div>
 
     <div style="
         text-align:center;
-        font-size:42px;
+        font-size:34px;
         font-weight:bold;
         color:white;
     ">
         {len(datos["favoritos"])}
     </div>
 
-    <div style="height:85px;"></div>
+    <div style="height:55px;"></div>
 
     <div style="
         text-align:center;
-        font-size:42px;
+        font-size:34px;
         font-weight:bold;
         color:#39ff14;
     ">
         {datos['estadisticas']['comun']}
     </div>
 
-    <div style="height:45px;"></div>
+    <div style="height:25px;"></div>
 
     <div style="
         text-align:center;
-        font-size:42px;
+        font-size:34px;
         font-weight:bold;
         color:#c77dff;
     ">
         {datos['estadisticas']['rara']}
     </div>
 
-    <div style="height:45px;"></div>
+    <div style="height:25px;"></div>
 
     <div style="
         text-align:center;
-        font-size:42px;
+        font-size:34px;
         font-weight:bold;
         color:#00d4ff;
     ">
         {datos['estadisticas']['epica']}
     </div>
 
-    <div style="height:45px;"></div>
+    <div style="height:25px;"></div>
 
     <div style="
         text-align:center;
-        font-size:42px;
+        font-size:34px;
         font-weight:bold;
         color:#ffd700;
     ">

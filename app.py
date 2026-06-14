@@ -356,7 +356,7 @@ with st.sidebar:
         font-weight:bold;
         color:black;
     ">
-        {st.session_state.total_generadas}
+        {datos["estadisticas"]["total"]}
     </div>
 
     <div style="height:45px;"></div>

@@ -568,7 +568,7 @@ st.divider()
 colA, colB = st.columns(2)
 
 with colA:
-    if st.button("⭐ Guardar en Favoritos"):
+    if st.button("⭐SAVE FAVORITES"):
 
         if st.session_state.ultima_idea != "":
 
@@ -589,7 +589,7 @@ with colA:
 
 st.divider()
 
-if st.button("📅CHALLENGE OF THE DAY"):
+if st.button("CHALLENGE OF THE DAY"):
 
     st.info(generar_desafio_dia())
 

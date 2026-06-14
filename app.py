@@ -439,31 +439,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-col1, col2, col3, col4 = st.columns(4, gap="large")
-
-st.markdown("---")
-
-if st.session_state.resultado != "":
-
-    st.subheader("🎨 Resultado")
-
-    st.markdown(f"""
-    <div style="
-        background-color:#151827;
-        padding:25px;
-        border-radius:12px;
-        border:2px solid #c86fff;
-        color:white;
-        font-size:18px;
-        white-space:pre-line;
-    ">
-    {st.session_state.resultado}
-    </div>
-    """, unsafe_allow_html=True)
-
 #RESULTADO
 if "resultado" not in st.session_state:
     st.session_state.resultado = ""
+
+col1, col2, col3, col4 = st.columns(4, gap="large")
 
 # PERSONA
 
@@ -557,6 +537,29 @@ with col4:
         )
         st.session_state.ultima_idea = texto_resultado
         st.session_state.resultado = texto_resultado
+
+# MOSTRAR RESULTADO
+    
+st.markdown("---")
+
+if st.session_state.resultado != "":
+
+    st.subheader("🎨 Resultado")
+
+    st.markdown(f"""
+    <div style="
+        background-color:#151827;
+        padding:25px;
+        border-radius:12px;
+        border:2px solid #c86fff;
+        color:white;
+        font-size:18px;
+        white-space:pre-line;
+    ">
+    {st.session_state.resultado}
+    </div>
+    """, unsafe_allow_html=True)
+
         
 # GUARDAR FAVORITOS
 st.divider()

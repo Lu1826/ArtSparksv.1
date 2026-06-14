@@ -5,6 +5,26 @@ import json
 import os
 import base64
 
+#BARRA LATERAL DE FONDO
+
+def get_base64(imagen):
+    with open(imagen, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+img = get_base64("profile.png")
+
+st.markdown(f"""
+<style>
+
+section[data-testid="stSidebar"] {{
+    background-image: url("data:image/png;base64,{img}");
+    background-size: cover;
+    background-repeat: no-repeat;
+}}
+
+</style>
+""", unsafe_allow_html=True)
+
 #IMAGEN DE FONDO
 def get_base64(imagen):
     with open(imagen, "rb") as f:

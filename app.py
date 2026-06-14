@@ -106,149 +106,6 @@ if "epica" not in st.session_state:
 if "legendaria" not in st.session_state:
     st.session_state.legendaria = 0
 
-
-# COLUMNA DE PERFIL
-datos = cargar_datos()
-with st.sidebar:
-    st.markdown(f"""
-
-    <div style="height:200px;"></div>
-
-    <div style="
-        text-align:center;
-        font-size:34px;
-        font-weight:bold;
-        color:black;
-    ">
-        {st.session_state.total_generadas}
-    </div>
-
-    <div style="height:45px;"></div>
-
-    <div style="
-        text-align:center;
-        font-size:34px;
-        font-weight:bold;
-        color:black;
-    ">
-        {len(datos["favoritos"])}
-    </div>
-
-    <div style="height:69px;"></div>
-
-    <div style="
-        text-align:center;
-        font-size:34px;
-        font-weight:bold;
-        color:#39ff14;
-    ">
-        {datos['estadisticas']['comun']}
-    </div>
-
-    <div style="height:14px;"></div>
-
-    <div style="
-        text-align:center;
-        font-size:34px;
-        font-weight:bold;
-        color:#c77dff;
-    ">
-        {datos['estadisticas']['rara']}
-    </div>
-
-    <div style="height:14px;"></div>
-
-    <div style="
-        text-align:center;
-        font-size:34px;
-        font-weight:bold;
-        color:#00d4ff;
-    ">
-        {datos['estadisticas']['epica']}
-    </div>
-
-    <div style="height:14px;"></div>
-
-    <div style="
-        text-align:center;
-        font-size:34px;
-        font-weight:bold;
-        color:#ffd700;
-    ">
-        {datos['estadisticas']['legendaria']}
-    </div>
-
-    """, unsafe_allow_html=True)
-    # Mostrar/Ocultar favoritos
-    if st.button("⭐ VIEW FAVORITES"):
-        st.session_state.mostrar_favoritos = not st.session_state.mostrar_favoritos
-
-    st.markdown("<div style='height:180px'></div>", unsafe_allow_html=True)
-# CHALLENGE OF THE DAY
-    st.markdown(f"""
-        <div style="
-            text-align:center;
-            color:black;
-            font-size:13px;
-            font-weight:bold;
-            padding-left:10px;
-            padding-right:10px;
-        ">
-        {generar_desafio_dia()}
-        </div>    
-        """, unsafe_allow_html=True)
-# CALCULADORA RAREZA
-def calcular_rareza(elementos):
-
-    palabras_raras = [
-        "Dragón",
-        "Cyborg",
-        "Vampiro",
-        "Hada",
-        "Ninja",
-        "Cyberpunk",
-        "Amarillo neón",
-        "Reloj de arena",
-        "Viajar en el tiempo",
-        "Telepatía"
-    ]
-
-    puntos = 0
-
-    for elemento in elementos:
-        if elemento in palabras_raras:
-            puntos += 1
-
-    if puntos >= 3:
-        return "🏆 Legendaria"
-    elif puntos == 2:
-        return "✨ Épica"
-    elif puntos == 1:
-        return "🔮 Rara"
-    else:
-        return "🟢 Común"
-        
-# REGISTRAR RAREZAS/ESTADISTICAS
-
-def registrar_rareza(rareza):
-
-    datos = cargar_datos()
-
-    datos["estadisticas"]["total"] += 1
-
-    if "Común" in rareza:
-        datos["estadisticas"]["comun"] += 1
-
-    elif "Rara" in rareza:
-        datos["estadisticas"]["rara"] += 1
-
-    elif "Épica" in rareza:
-        datos["estadisticas"]["epica"] += 1
-
-    elif "Legendaria" in rareza:
-        datos["estadisticas"]["legendaria"] += 1
-
-    guardar_datos(datos)
 # LISTAS
 
 # =====================
@@ -444,28 +301,7 @@ acciones_existente = [
     "explorando"
 ]
 
-# DESAFIO DEL DIA
 
-def generar_desafio_dia():
-
-    hoy = str(date.today())
-    random.seed(hoy)
-
-    animal = random.choice(animales)     #ERROR
-    color = random.choice(colores)
-    accion = random.choice(acciones)
-    estilo = random.choice(estilos)
-    objeto = random.choice(objetos)
-
-    random.seed()
-
-    return (
-    f"Dibuja una persona {accion.lower()} "
-    f"sosteniendo {objeto.lower()} "
-    f"acompañado de un {animal.lower()}, "
-    f"con estilo {estilo} "
-    f"y como color principal el {color}."
-)
 
 # NIVELES DE RAREZA
 
@@ -481,7 +317,174 @@ palabras_raras = [
     "Viajar en el tiempo",
     "Telepatía"
 ]
+
+# DESAFIO DEL DIA
+
+def generar_desafio_dia():
+
+    hoy = str(date.today())
+    random.seed(hoy)
+
+    animal = random.choice(animales)
+    color = random.choice(colores)
+    accion = random.choice(acciones)
+    estilo = random.choice(estilos)
+    objeto = random.choice(objetos)
+
+    random.seed()
+
+    return (
+    f"Dibuja una persona {accion.lower()} "
+    f"sosteniendo {objeto.lower()} "
+    f"acompañado de un {animal.lower()}, "
+    f"con estilo {estilo} "
+    f"y como color principal el {color}."
+)
 # =====================
+
+# COLUMNA DE PERFIL
+datos = cargar_datos()
+with st.sidebar:
+    st.markdown(f"""
+
+    <div style="height:200px;"></div>
+
+    <div style="
+        text-align:center;
+        font-size:34px;
+        font-weight:bold;
+        color:black;
+    ">
+        {st.session_state.total_generadas}
+    </div>
+
+    <div style="height:45px;"></div>
+
+    <div style="
+        text-align:center;
+        font-size:34px;
+        font-weight:bold;
+        color:black;
+    ">
+        {len(datos["favoritos"])}
+    </div>
+
+    <div style="height:69px;"></div>
+
+    <div style="
+        text-align:center;
+        font-size:34px;
+        font-weight:bold;
+        color:#39ff14;
+    ">
+        {datos['estadisticas']['comun']}
+    </div>
+
+    <div style="height:14px;"></div>
+
+    <div style="
+        text-align:center;
+        font-size:34px;
+        font-weight:bold;
+        color:#c77dff;
+    ">
+        {datos['estadisticas']['rara']}
+    </div>
+
+    <div style="height:14px;"></div>
+
+    <div style="
+        text-align:center;
+        font-size:34px;
+        font-weight:bold;
+        color:#00d4ff;
+    ">
+        {datos['estadisticas']['epica']}
+    </div>
+
+    <div style="height:14px;"></div>
+
+    <div style="
+        text-align:center;
+        font-size:34px;
+        font-weight:bold;
+        color:#ffd700;
+    ">
+        {datos['estadisticas']['legendaria']}
+    </div>
+
+    """, unsafe_allow_html=True)
+    # Mostrar/Ocultar favoritos
+    if st.button("⭐ VIEW FAVORITES"):
+        st.session_state.mostrar_favoritos = not st.session_state.mostrar_favoritos
+
+    st.markdown("<div style='height:180px'></div>", unsafe_allow_html=True)
+# CHALLENGE OF THE DAY
+    st.markdown(f"""
+        <div style="
+            text-align:center;
+            color:black;
+            font-size:13px;
+            font-weight:bold;
+            padding-left:10px;
+            padding-right:10px;
+        ">
+        {generar_desafio_dia()}
+        </div>    
+        """, unsafe_allow_html=True)
+# CALCULADORA RAREZA
+def calcular_rareza(elementos):
+
+    palabras_raras = [
+        "Dragón",
+        "Cyborg",
+        "Vampiro",
+        "Hada",
+        "Ninja",
+        "Cyberpunk",
+        "Amarillo neón",
+        "Reloj de arena",
+        "Viajar en el tiempo",
+        "Telepatía"
+    ]
+
+    puntos = 0
+
+    for elemento in elementos:
+        if elemento in palabras_raras:
+            puntos += 1
+
+    if puntos >= 3:
+        return "🏆 Legendaria"
+    elif puntos == 2:
+        return "✨ Épica"
+    elif puntos == 1:
+        return "🔮 Rara"
+    else:
+        return "🟢 Común"
+        
+# REGISTRAR RAREZAS/ESTADISTICAS
+
+def registrar_rareza(rareza):
+
+    datos = cargar_datos()
+
+    datos["estadisticas"]["total"] += 1
+
+    if "Común" in rareza:
+        datos["estadisticas"]["comun"] += 1
+
+    elif "Rara" in rareza:
+        datos["estadisticas"]["rara"] += 1
+
+    elif "Épica" in rareza:
+        datos["estadisticas"]["epica"] += 1
+
+    elif "Legendaria" in rareza:
+        datos["estadisticas"]["legendaria"] += 1
+
+    guardar_datos(datos)
+
 
 # BOTONES
 
@@ -656,13 +659,6 @@ with colA:
         else:
             st.warning("Primero genera una idea")
 
-# BOTON DEAFIO DEL DIA
-
-st.divider()
-
-if st.button("CHALLENGE OF THE DAY"):
-
-    st.info(generar_desafio_dia())
 
 # FAVORITOS
 if st.session_state.mostrar_favoritos:

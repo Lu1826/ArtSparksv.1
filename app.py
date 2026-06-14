@@ -335,7 +335,7 @@ def generar_desafio_dia():
 
     return (
     f"Dibuja una persona {accion.lower()} "
-    f"sosteniendo un{objeto.lower()} "
+    f"sosteniendo/usando un{objeto.lower()} "
     f"acompañado de un {animal.lower()}, "
     f"con estilo {estilo} "
     f"y como color principal el {color}."
@@ -424,7 +424,7 @@ with st.sidebar:
         <div style="
             text-align:center;
             color:black;
-            font-size:15px;
+            font-size:16px;
             font-weight:bold;
             padding-left:10px;
             padding-right:10px;

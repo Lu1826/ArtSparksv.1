@@ -459,6 +459,26 @@ with col1:
         )
         st.session_state.ultima_idea = texto_resultado
         st.session_state.resultado = texto_resultado
+
+#--------------- DESAPARECER
+st.markdown("---")
+
+if st.session_state.resultado:
+
+    st.markdown(f"""
+    <div style="
+        background-color:#151827;
+        padding:25px;
+        border-radius:15px;
+        border:3px solid #c86fff;
+        color:white;
+        font-size:20px;
+        white-space:pre-line;
+        margin-top:20px;
+    ">
+    {st.session_state.resultado}
+    </div>
+    """, unsafe_allow_html=True)
         
 # PERSONAJE
 
@@ -491,6 +511,26 @@ with col2:
         st.session_state.ultima_idea = texto_resultado
         st.session_state.resultado = texto_resultado
 
+#----------DESAPARECER
+st.markdown("---")
+
+if st.session_state.resultado:
+
+    st.markdown(f"""
+    <div style="
+        background-color:#151827;
+        padding:25px;
+        border-radius:15px;
+        border:3px solid #c86fff;
+        color:white;
+        font-size:20px;
+        white-space:pre-line;
+        margin-top:20px;
+    ">
+    {st.session_state.resultado}
+    </div>
+    """, unsafe_allow_html=True)
+    
 # TREND
 
 with col3:
@@ -524,6 +564,26 @@ with col3:
         st.session_state.ultima_idea = texto_resultado
         st.session_state.resultado = texto_resultado
 
+#---------------- DESAPARECER
+st.markdown("---")
+
+if st.session_state.resultado:
+
+    st.markdown(f"""
+    <div style="
+        background-color:#151827;
+        padding:25px;
+        border-radius:15px;
+        border:3px solid #c86fff;
+        color:white;
+        font-size:20px;
+        white-space:pre-line;
+        margin-top:20px;
+    ">
+    {st.session_state.resultado}
+    </div>
+    """, unsafe_allow_html=True)
+
 # PERSONAJE EXISTENTE
 with col4:
     if st.button("CHARACTER EXIST"):
@@ -537,6 +597,26 @@ with col4:
         )
         st.session_state.ultima_idea = texto_resultado
         st.session_state.resultado = texto_resultado
+
+#---------- DESAPARECER
+st.markdown("---")
+
+if st.session_state.resultado:
+
+    st.markdown(f"""
+    <div style="
+        background-color:#151827;
+        padding:25px;
+        border-radius:15px;
+        border:3px solid #c86fff;
+        color:white;
+        font-size:20px;
+        white-space:pre-line;
+        margin-top:20px;
+    ">
+    {st.session_state.resultado}
+    </div>
+    """, unsafe_allow_html=True)
 
 # MOSTRAR RESULTADO
     

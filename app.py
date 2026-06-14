@@ -424,6 +424,7 @@ st.markdown("<br>" * 9, unsafe_allow_html=True)
 st.markdown("""
 <style>
 
+/* TAMAÑO BOTONES */
 .stButton > button {
     width: 170px !important;
     height: 70px !important;
@@ -435,6 +436,35 @@ st.markdown("""
     font-weight: 900 !important;
 }
 
+/* PEOPLE (Rojo) */
+div[data-testid="column"]:nth-of-type(1) .stButton > button {
+    background-color: #E53935 !important;
+    color: white !important;
+}
+
+/* CHARACTER (Azul) */
+div[data-testid="column"]:nth-of-type(2) .stButton > button {
+    background-color: #1E88E5 !important;
+    color: white !important;
+}
+
+/* FULL CHALLENGE (Verde) */
+div[data-testid="column"]:nth-of-type(3) .stButton > button {
+    background-color: #43A047 !important;
+    color: white !important;
+}
+
+/* CHARACTER EXIST (Amarillo) */
+div[data-testid="column"]:nth-of-type(4) .stButton > button {
+    background-color: #FDD835 !important;
+    color: black !important;
+}
+
+/* HOVER */
+.stButton > button:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+}
 
 </style>
 """, unsafe_allow_html=True)

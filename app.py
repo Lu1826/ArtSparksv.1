@@ -138,7 +138,7 @@ with st.sidebar:
         text-align:center;
         font-size:34px;
         font-weight:bold;
-        color:white;
+        color:black;
     ">
         {st.session_state.total_generadas}
     </div>
@@ -149,7 +149,7 @@ with st.sidebar:
         text-align:center;
         font-size:34px;
         font-weight:bold;
-        color:white;
+        color:black;
     ">
         {len(datos["favoritos"])}
     </div>

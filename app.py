@@ -460,12 +460,12 @@ def generar_desafio_dia():
     random.seed()
 
     return (
-        f"Dibuja una persona "
-        f"{accion.lower()} 
-        f" sosteniendo {objeto.lower()} acompañado de un"
-        f"{animal.lower()}"
-        f" , con estilo {estilo} y como color principal el {color}."
-    )
+    f"Dibuja una persona {accion.lower()} "
+    f"sosteniendo {objeto.lower()} "
+    f"acompañado de un {animal.lower()}, "
+    f"con estilo {estilo} "
+    f"y como color principal el {color}."
+)
 
 # NIVELES DE RAREZA
 

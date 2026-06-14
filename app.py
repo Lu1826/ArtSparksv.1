@@ -12,15 +12,16 @@ def autoplay_audio(ruta_audio):
 
     b64 = base64.b64encode(data).decode()
 
-    md = f"""
-    <audio autoplay loop>
-        <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
-    </audio>
-    """
+    st.markdown(
+        f"""
+        <audio controls autoplay loop style="display:none;">
+            <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+        </audio>
+        """,
+        unsafe_allow_html=True
+    )
 
-    st.markdown(md, unsafe_allow_html=True)
-
-autoplay_audio("assets/music.mp3")
+autoplay_audio("assets/musica.mp3")
 #BARRA LATERAL DE FONDO
 
 def get_base64(imagen):

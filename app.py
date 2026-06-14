@@ -132,7 +132,7 @@ datos = cargar_datos()
 with st.sidebar:
     st.markdown(f"""
 
-    <div style="height:195px;"></div>
+    <div style="height:197px;"></div>
 
     <div style="
         text-align:center;
@@ -143,7 +143,7 @@ with st.sidebar:
         {st.session_state.total_generadas}
     </div>
 
-    <div style="height:60px;"></div>
+    <div style="height:55px;"></div>
 
     <div style="
         text-align:center;
@@ -154,7 +154,7 @@ with st.sidebar:
         {len(datos["favoritos"])}
     </div>
 
-    <div style="height:40px;"></div>
+    <div style="height:50px;"></div>
 
     <div style="
         text-align:center;

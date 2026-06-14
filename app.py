@@ -441,6 +441,30 @@ st.markdown("""
 
 col1, col2, col3, col4 = st.columns(4, gap="large")
 
+st.markdown("---")
+
+if st.session_state.resultado != "":
+
+    st.subheader("🎨 Resultado")
+
+    st.markdown(f"""
+    <div style="
+        background-color:#151827;
+        padding:25px;
+        border-radius:12px;
+        border:2px solid #c86fff;
+        color:white;
+        font-size:18px;
+        white-space:pre-line;
+    ">
+    {st.session_state.resultado}
+    </div>
+    """, unsafe_allow_html=True)
+
+#RESULTADO
+if "resultado" not in st.session_state:
+    st.session_state.resultado = ""
+
 # PERSONA
 
 with col1:
@@ -454,7 +478,7 @@ with col1:
             f"Pasatiempo: {random.choice(pasatiempos)}"
         )
         st.session_state.ultima_idea = texto_resultado
-        st.success(texto_resultado)
+        st.session_state.resultado = texto_resultado
         
 # PERSONAJE
 
@@ -485,7 +509,7 @@ with col2:
         )
 
         st.session_state.ultima_idea = texto_resultado
-        st.success(texto_resultado)
+        st.session_state.resultado = texto_resultado
 
 # TREND
 
@@ -518,7 +542,7 @@ with col3:
         )
 
         st.session_state.ultima_idea = texto_resultado
-        st.success(texto_resultado)
+        st.session_state.resultado = texto_resultado
 
 # PERSONAJE EXISTENTE
 with col4:
@@ -532,7 +556,7 @@ with col4:
             f"Estado de ánimo:\n{random.choice(animos)}"
         )
         st.session_state.ultima_idea = texto_resultado
-        st.success(texto_resultado)
+        st.session_state.resultado = texto_resultado
         
 # GUARDAR FAVORITOS
 st.divider()

@@ -132,11 +132,11 @@ datos = cargar_datos()
 with st.sidebar:
     st.markdown(f"""
 
-    <div style="height:130px;"></div>
+    <div style="height:100px;"></div>
 
     <div style="
         text-align:center;
-        font-size:20px;
+        font-size:34px;
         font-weight:bold;
         color:white;
     ">

@@ -8,6 +8,7 @@ import streamlit as st
 
 
 #MUSIC
+
 def music_player(file_path):
 
     with open(file_path, "rb") as f:
@@ -19,24 +20,28 @@ def music_player(file_path):
         f"""
         <div style="
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 15px;
+            right: 15px;
             z-index: 9999;
-            background-color: rgba(0,0,0,0.5);
-            padding: 10px;
-            border-radius: 10px;
+            opacity: 0.75;
         ">
-
-        <audio id="bgmusic" controls loop>
-            <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mp3">
-        </audio>
-
+            <audio id="bgmusic" controls loop>
+                <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mp3">
+            </audio>
         </div>
+
+        <script>
+            var audio = document.getElementById("bgmusic");
+
+            audio.volume = 0.3;  // 30%
+
+        </script>
         """,
         unsafe_allow_html=True
     )
 
 music_player("assets/music.mp3")
+
 #BARRA LATERAL DE FONDO
 
 def get_base64(imagen):

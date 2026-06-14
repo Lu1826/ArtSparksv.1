@@ -214,7 +214,7 @@ with st.sidebar:
         padding-left:10px;
         padding-right:10px;
     ">
-    {generar_desafio_dia()}
+    (generar_desafio_dia())
     </div>
     """, unsafe_allow_html=True)
 

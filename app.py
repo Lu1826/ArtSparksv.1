@@ -112,10 +112,6 @@ if "epica" not in st.session_state:
 if "legendaria" not in st.session_state:
     st.session_state.legendaria = 0
 
-# TITLE
-
-st.title("🎨 ArtSpark")
-st.subheader("Generador creativo de ideas para artistas")
 
 # COLUMNA DE PERFIL
 datos = cargar_datos()
@@ -419,6 +415,26 @@ palabras_raras = [
 # BOTONES
 
 # =====================
+st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+
+.stButton > button {
+
+    width: 300px;
+    height: 80px;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    border-radius: 20px;
+
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 
 col1, col2, col3, col4 = st.columns(4)
 

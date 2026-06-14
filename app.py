@@ -24,6 +24,7 @@ def autoplay_audio(file_path):
 
 autoplay_audio("assets/music.mp3")
 
+st.audio("assets/music.mp3")
 #BARRA LATERAL DE FONDO
 
 def get_base64(imagen):

@@ -21,7 +21,7 @@ def autoplay_audio(ruta_audio):
         unsafe_allow_html=True
     )
 
-autoplay_audio("assets/musica.mp3")
+autoplay_audio("assets/music.mp3")
 #BARRA LATERAL DE FONDO
 
 def get_base64(imagen):

@@ -344,6 +344,7 @@ def generar_desafio_dia():
 
 # COLUMNA DE PERFIL
 datos = cargar_datos()
+{datos["estadisticas"]["total"]}
 with st.sidebar:
     st.markdown(f"""
 
@@ -527,6 +528,11 @@ with col1:
             f"Ropa: {random.choice(ropa)}\n"
             f"Pasatiempo: {random.choice(pasatiempos)}"
         )
+        datos = cargar_datos()
+        datos["estadisticas"]["total"] += 1
+
+        guardar_datos(datos)
+        
         st.session_state.ultima_idea = texto_resultado
         st.session_state.resultado = texto_resultado
 
@@ -558,7 +564,10 @@ with col2:
             f"Objetivo: {objetivo}\n\n"
             f"Rareza: {rareza}"
         )
+        datos = cargar_datos()
+        datos["estadisticas"]["total"] += 1
 
+        guardar_datos(datos)
         st.session_state.ultima_idea = texto_resultado
         st.session_state.resultado = texto_resultado
 
@@ -592,7 +601,10 @@ with col3:
             f"Objeto: {objeto}\n\n"
             f"Rareza: {rareza}"
         )
+        datos = cargar_datos()
+        datos["estadisticas"]["total"] += 1
 
+        guardar_datos(datos)
         st.session_state.ultima_idea = texto_resultado
         st.session_state.resultado = texto_resultado
 
@@ -608,6 +620,10 @@ with col4:
             f"Clima:\n{random.choice(climas)}\n\n"
             f"Estado de ánimo:\n{random.choice(animos)}"
         )
+        datos = cargar_datos()
+        datos["estadisticas"]["total"] += 1
+
+        guardar_datos(datos)
         st.session_state.ultima_idea = texto_resultado
         st.session_state.resultado = texto_resultado
 

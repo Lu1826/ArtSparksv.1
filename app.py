@@ -216,7 +216,7 @@ st.markdown(f"""
     ">
     {generar_desafio_dia()}
     </div>    
-
+    """, unsafe_allow_html=True)
 # CALCULADORA RAREZA
 def calcular_rareza(elementos):
 

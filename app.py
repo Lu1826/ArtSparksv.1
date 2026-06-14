@@ -425,7 +425,7 @@ st.markdown("""
 <style>
 
 .stButton > button {
-    width: 220px !important;
+    width: 170px !important;
     height: 70px !important;
 }
 
@@ -435,14 +435,11 @@ st.markdown("""
     font-weight: 900 !important;
 }
 
-/* También por si Streamlit usa span */
-.stButton > button span {
-    font-size: 22px !important;
-    font-weight: 900 !important;
-}
 
 </style>
 """, unsafe_allow_html=True)
+
+col1, col2, col3, col4 = st.columns(4, gap="large")
 
 # PERSONA
 

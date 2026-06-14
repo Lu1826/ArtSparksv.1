@@ -203,6 +203,20 @@ with st.sidebar:
     if st.button("⭐ VIEW FAVORITES"):
         st.session_state.mostrar_favoritos = not st.session_state.mostrar_favoritos
 
+    st.markdown("<div style='height:180px'></div>", unsafe_allow_html=True)
+# CHALLENGE OF THE DAY
+    st.markdown(f"""
+    <div style="
+        text-align:center;
+        color:black;
+        font-size:13px;
+        font-weight:bold;
+        padding-left:10px;
+        padding-right:10px;
+    ">
+    {generar_desafio_dia()}
+    </div>
+    """, unsafe_allow_html=True)
 
 # CALCULADORA RAREZA
 def calcular_rareza(elementos):

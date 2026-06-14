@@ -10,14 +10,14 @@ def get_base64(imagen):
     with open(imagen, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-fondo = get_base64("assets/fondo.png")
+fondo = get_base64("assets/FONDO.png")
 
 st.markdown(
     f"""
     <style>
 
     .stApp {{
-        background-image: url("data:image/png;base64,{fondo}");
+        background-image: url("data:image/png;base64,{FONDO}");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;

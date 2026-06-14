@@ -143,7 +143,7 @@ with st.sidebar:
         {st.session_state.total_generadas}
     </div>
 
-    <div style="height:58px;"></div>
+    <div style="height:30px;"></div>
 
     <div style="
         text-align:center;

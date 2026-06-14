@@ -5,6 +5,22 @@ import json
 import os
 import base64
 
+#MUSIC
+def autoplay_audio(ruta_audio):
+    with open(ruta_audio, "rb") as f:
+        data = f.read()
+
+    b64 = base64.b64encode(data).decode()
+
+    md = f"""
+    <audio autoplay loop>
+        <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+    </audio>
+    """
+
+    st.markdown(md, unsafe_allow_html=True)
+
+autoplay_audio("assets/music.mp3")
 #BARRA LATERAL DE FONDO
 
 def get_base64(imagen):

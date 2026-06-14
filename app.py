@@ -165,7 +165,7 @@ with st.sidebar:
         {datos['estadisticas']['comun']}
     </div>
 
-    <div style="height:18px;"></div>
+    <div style="height:16px;"></div>
 
     <div style="
         text-align:center;
@@ -176,7 +176,7 @@ with st.sidebar:
         {datos['estadisticas']['rara']}
     </div>
 
-    <div style="height:20px;"></div>
+    <div style="height:16px;"></div>
 
     <div style="
         text-align:center;
@@ -187,7 +187,7 @@ with st.sidebar:
         {datos['estadisticas']['epica']}
     </div>
 
-    <div style="height:20px;"></div>
+    <div style="height:16px;"></div>
 
     <div style="
         text-align:center;

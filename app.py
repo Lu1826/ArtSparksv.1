@@ -418,7 +418,7 @@ with st.sidebar:
     if st.button("⭐ VIEW FAVORITES"):
         st.session_state.mostrar_favoritos = not st.session_state.mostrar_favoritos
 
-    st.markdown("<div style='height:95px'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height:93px'></div>", unsafe_allow_html=True)
 # CHALLENGE OF THE DAY
     st.markdown(f"""
         <div style="

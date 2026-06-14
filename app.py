@@ -33,7 +33,7 @@ def music_player(file_path):
         <script>
             var audio = document.getElementById("bgmusic");
 
-            audio.volume = 0.3;  // 30%
+            audio.volume = 0.15;  // 15%
 
         </script>
         """,
